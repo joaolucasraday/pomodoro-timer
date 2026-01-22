@@ -1,14 +1,17 @@
 import { useNavigation } from "@react-navigation/native"
 import { View, Text, TouchableOpacity } from "react-native"
+import { TNavigationScreenProps } from "../AppRoutes";
+import { Theme } from "../shared/themes/Theme";
 
 
 export const Home = () => {
-    const navigation = useNavigation<any>();
+    const navigation = useNavigation<TNavigationScreenProps>();
     return(
         <View>
-            <Text style={{fontFamily: 'InterRegular', fontSize:50}}>Home Page</Text>
+            <Text style={{fontFamily: 'InterRegular', fontSize:52, color: Theme.colors.text}}>Home Page</Text>
+
             <TouchableOpacity onPress={() => navigation.navigate('Settings')}>
-                <Text>Settings</Text>
+                <Text style={{ color: Theme.colors.text}}>Settings</Text>
             </TouchableOpacity>
         </View>
     )
